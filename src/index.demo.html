@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Vue</title>
+</head>
+
+<body>
+    <div id="app">{{ message }}</div>
+    <div id="app-1">
+        <span v-bind:title="message">
+            悬停
+        </span>
+    </div>
+    <div id="app-2">
+        <p v-if="seen">能看到 - {{ seen }}</p>
+        <p v-else>看不到😀 - {{ seen }}</p>
+    </div>
+    <div id="app-3">
+        <ul>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ul>
+    </div>
+    <div id="app-4">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+    <!-- 双向数据绑定 -->
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <input v-model="message" />
+    </div>
+    <!-- 自定义组件 -->
+    <div id="app-6">
+        <ul>
+            <todo-item v-for="item in list" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ul>
+    </div>
+    <div id="app-7" v-bind:style="style">16px Red.</div>
+    <a id="app-8" v-bind:[attributeName]="url">...</a>
+    <!-- Vue 通常会尽可能高效地渲染元素，会复用已有元素而不是从头开始渲染 -->
+    <!-- 添加 class 也不会让 Vue 重新渲染，只会动态的改变class -->
+    <!-- 需要添加用于标识的 key 来区别 -->
+    <div id="app-9">
+        <template v-if="isUserName">
+            <label>UserName</label>
+            <input key="username" placeholder="Enter your username" class="username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input key="email" placeholder="Enter your email" class="email">
+        </template>
+        <button @click="changeLogin">Change</button>
+    </div>
+    <div id="app-10">
+        <span v-for="n in 10">{{ n }} </span>
+    </div>
+    <div id="app-11">
+        <ul>
+            <template v-for="item in 3">
+                <li v-bind:key="item">{{ item }}</li>
+                <li class="divider" role="presentation"></li>
+            </template>
+        </ul>
+    </div>
+    <!-- 单选 -->
+    <!-- 因为在ios中可能出现bug，如果默认无选中的话，最好将第一项为空，并默认选中 -->
+    <div id="app-12">
+        <select name="demo-1" v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+    </div>
+    <!-- 多选 -->
+    <!-- selected 将作为一个数组出现 -->
+    <div id="app-13">
+        <select name="demo-2" multiple v-model="selected" style="width: 50px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+    </div>
+    <!-- 循环渲染 -->
+    <div id="app-14">
+        <select v-model="selected">
+            <option v-for="option in options" :value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+    </div>
+    <div id="app-15">
+        <input type="checkbox" v-model="toggle" true-value="yes" false-value="no" />
+    </div>
+    <div id="app-16">
+        <xx title="Hello"></xx>
+        <xx title="World!"></xx>
+    </div>
+    <div id="app-17">
+        <xx v-for="title in titles" :title="title.text" :key="title.id"></xx>
+    </div>
+    <!-- 子组件绑定触发父组件的事件 -->
+    <div id="app-18">
+        <div :style="{ fontSize: fontSize + 'em' }">
+            <aaa v-for="post in posts" :post="post" :key="post.id" @more-big="addSize"></aaa>
+        </div>
+    </div>
+    <!-- 自定义复选框组件绑定 v-model -->
+    <div id="app-19">
+        <base-checkbox v-model="lovingVue"></base-checkbox>
+    </div>
+    <!-- 插槽 -->
+    <div id="app-20">
+        <base-url :href="url">
+            我是一个链接
+        </base-url>
+        <base-url :href="url"></base-url>
+    </div>
+    <!-- 具名插槽 -->
+    <div id="app-21">
+        <my-web>
+            <template v-slot:header>
+                <h1>Here might be a page title</h1>
+            </template>
+
+            <template v-slot:content>
+                <p>A paragraph for the main content.</p>
+                <p>And another one.</p>
+            </template>
+
+            <template v-slot:footer>
+                <p>Here's some contact info</p>
+            </template>
+        </my-web>
+    </div>
+</body>
+
+</html>
