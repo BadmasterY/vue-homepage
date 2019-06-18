@@ -9,7 +9,7 @@
         <span>China / beijing</span>
       </div>
       <div id="heading-tagline">
-        逗逼，文艺(伪)的渣渣程序猿。<del>喜欢唱跳rap和<Icon type="md-basketball"/></del>。
+        逗逼，文艺(伪)的渣渣程序猿。喜欢唱跳rap和<Icon type="md-basketball"/>。
       </div>
       <div id="heading-callme">
         <a class="index-a" v-for="link in links" :key="link.id" target="_blank" :href="link.href">
@@ -44,7 +44,7 @@
   color: #515a6e;
 }
 .index-a:hover {
-  color: #000;
+  color: #17233d;
 }
 </style>
 

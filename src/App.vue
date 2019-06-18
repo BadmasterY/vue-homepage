@@ -13,9 +13,15 @@
         </li>
       </ul>
     </div>
-    <my-head v-if="showHead"></my-head>
-    <my-sao v-if="showSao"></my-sao>
-    <me v-if="showMe"></me>
+    <keep-alive>
+      <my-head v-if="showHead"></my-head>
+    </keep-alive>
+    <keep-alive>
+      <my-sao v-if="showSao"></my-sao>
+    </keep-alive>
+    <keep-alive>
+      <me v-if="showMe"></me>
+    </keep-alive>
   </div>
 </template>
 
@@ -78,7 +84,7 @@ li {
   color: #515a6e;
 }
 .index-a:hover {
-  color: #000;
+  color: #17233d;
 }
 </style>
 

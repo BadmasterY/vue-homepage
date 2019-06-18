@@ -9,7 +9,7 @@ const parts = require('./webpack.parts');
 
 const PATHS = {
     app: path.join(__dirname, 'src'),
-    build: path.join(__dirname, 'build')
+    build: path.join(__dirname, 'client')
 };
 
 const commonConfig = merge([
