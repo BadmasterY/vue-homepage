@@ -3,11 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require('path');
 const globAll = require('glob-all');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const parts = require('./webpack.parts');
 
 const PATHS = {
+    root: path.join(__dirname),
     app: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'client')
 };
@@ -61,6 +62,8 @@ const productionConfig = merge([
     }),
     parts.loadJavascript({ include: PATHS.app }),
     parts.minifyJavascript(),
+    parts.copyModels(PATHS.app + '/static', PATHS.build + '/static'),
+    parts.copyModels(PATHS.root + '/favicon.ico', PATHS.build),
     {
         optimization: {
             splitChunks: {

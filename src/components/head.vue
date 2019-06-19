@@ -52,7 +52,7 @@
 export default {
   data() {
     return {
-      header: require("../images/me.jpg"),
+      header: require("../static/images/me.jpg"),
       links: [
         {
           id: 0,

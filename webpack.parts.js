@@ -3,6 +3,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const cssnano = require('cssnano');
 
@@ -192,3 +193,11 @@ exports.minifyCss = ({ options }) => ({
         })
     ]
 });
+
+// copy models
+exports.copyModels = (from, to, options) => ({
+    plugins: [new CopyWebpackPlugin([{
+        from: from,
+        to: to
+    }], options)]
+})

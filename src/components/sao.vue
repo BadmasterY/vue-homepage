@@ -5,7 +5,7 @@
         <a :href="list.href" class="sao-a">
           <Card class="card">
             <div class="card-content">
-              <img :src="list.src" width="50%">
+              <img v-lazy="list.src" width="100%">
               <h3>{{ list.title }}</h3>
             </div>
           </Card>

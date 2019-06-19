@@ -6,7 +6,7 @@
 - iView
 - three.js
 - Koa
-- Mongodb
+- mysql
 - webpack
 - babel
   
