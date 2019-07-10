@@ -1,12 +1,9 @@
 # vue-personal-homepage
-个人首页Vue + iView + Koa + MongoDB
+个人首页Vue + iView
 
 # 技术栈
 - Vue
 - iView
-- three.js
-- Koa
-- mysql
 - webpack
 - babel
   
@@ -17,11 +14,9 @@
 ## 前端部分
 - 个人首页
 - 个人简介页
-- webgl(three.js)
   
 ## 后端部分
-- 登陆(私人)
-- 后台管理系统(用于新的demo发布)
+- 无
 
 # 支持
 - PC/移动端(web)
