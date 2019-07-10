@@ -16,9 +16,9 @@
     <keep-alive>
       <my-head v-if="showHead"></my-head>
     </keep-alive>
-    <keep-alive>
+    <!-- <keep-alive>
       <my-sao v-if="showSao"></my-sao>
-    </keep-alive>
+    </keep-alive> -->
     <keep-alive>
       <me v-if="showMe"></me>
     </keep-alive>
@@ -90,7 +90,7 @@ li {
 
 <script>
 import myHead from "./components/head";
-import mySao from "./components/sao";
+// import mySao from "./components/sao";
 import me from "./components/me";
 export default {
   data() {
@@ -101,14 +101,14 @@ export default {
       showMenu: false,
       menus: [
         { id: 0, text: "首页" },
-        { id: 1, text: "马叉虫" },
-        { id: 2, text: "Me" }
+        { id: 1, text: "Me" },
+        // { id: 2, text: "马叉虫" },
       ],
     };
   },
   components: {
     myHead,
-    mySao,
+    // mySao,
     me
   },
   methods: {
@@ -124,7 +124,7 @@ export default {
         this.showMenu = false;
         
         if(event.target.innerText == '首页')this.showHead = true;
-        if(event.target.innerText == '马叉虫')this.showSao = true;
+        // if(event.target.innerText == '马叉虫')this.showSao = true;
         if(event.target.innerText == 'Me')this.showMe = true;
     }
   }

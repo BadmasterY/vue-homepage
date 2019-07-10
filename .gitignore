@@ -1,6 +1,10 @@
-# npm
+# me
 build
 client
+db
+server
+
+# npm
 node_modules
 package-lock.json
 
